@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>隐律实验室</title>
+        <title>隐律工所</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,14 +11,114 @@
             href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
             rel="stylesheet"
         />
+        <style>
+            .custom-cursor {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 10px;
+                height: 10px;
+                margin-left: -5px;
+                margin-top: -5px;
+                background: #b8302a;
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition:
+                    width 0.25s ease,
+                    height 0.25s ease,
+                    margin 0.25s ease;
+            }
+            .custom-cursor.hover {
+                width: 20px;
+                height: 20px;
+                margin-left: -10px;
+                margin-top: -10px;
+            }
+            body,
+            a,
+            label,
+            .business-item,
+            .cta-link,
+            .menu-btn,
+            .menu-close,
+            .lang-switch,
+            .return-top {
+                cursor: none;
+            }
+            @media (pointer: coarse) {
+                .custom-cursor {
+                    display: none;
+                }
+                body,
+                a,
+                label,
+                .business-item,
+                .cta-link,
+                .menu-btn,
+                .menu-close,
+                .lang-switch,
+                .return-top {
+                    cursor: auto;
+                }
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(28px);
+                transition:
+                    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .fv-line1,
+            .fv-line2 {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            .fv-line1 {
+                animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s
+                    forwards;
+            }
+            .fv-line2 {
+                animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s
+                    forwards;
+            }
+            @keyframes fadeUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .business-item {
+                transition:
+                    background 0.2s ease,
+                    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .business-item:hover {
+                transform: translateY(-3px);
+            }
+            .cta-link {
+                transition:
+                    opacity 0.15s ease,
+                    transform 0.25s ease;
+            }
+            .cta-link:hover {
+                transform: translateX(3px);
+            }
+        </style>
     </head>
     <body>
+        <div class="custom-cursor"></div>
         <input type="checkbox" class="menu-check" id="menu-opener" />
 
         <header class="site-header">
             <a href="/" class="logo">
-                <img src="Logo/logo.drawio.png" alt="ylv" />
-                <span class="logo-text">｜隐律实验室</span>
+                <img src="Logo/logo_c.drawio.png" alt="ylv" />
+                <span class="logo-text">｜隐律工所</span>
             </a>
             <div class="header-actions">
                 <a href="en.html" class="lang-switch">EN</a>
@@ -28,13 +128,13 @@
 
         <div class="global-menu">
             <div class="menu-header">
-                <span class="menu-logo">隐律实验室</span>
+                <span class="menu-logo">隐律工所</span>
                 <label for="menu-opener" class="menu-close">关闭</label>
             </div>
             <div class="menu-body">
                 <h2>选单</h2>
                 <ul class="menu-list">
-                    <li><a href="#products">解决方案</a></li>
+                    <li><a href="#products">核心技术</a></li>
                     <li><a href="#knowledge">知识库</a></li>
                     <li><a href="#software">软件</a></li>
                     <li><a href="#about">关于</a></li>
@@ -48,10 +148,9 @@
                     <span class="fv-line1"> 洞见 </span>
                     <span class="fv-line2">隐律.</span>
                 </h1>
-                <div class="fv-desc">隐于核心，律动万物.</div>
             </section>
 
-            <section class="business" id="products">
+            <section class="business reveal" id="products">
                 <div class="business-grid">
                     <a href="#" class="business-item">
                         <svg
@@ -63,7 +162,7 @@
                         >
                             <path d="M7 17L17 7M17 7H7M17 7V17" />
                         </svg>
-                        <span>解决方案</span>
+                        <span>核心技术</span>
                     </a>
                     <a href="#" class="business-item">
                         <svg
@@ -104,9 +203,9 @@
                 </div>
             </section>
 
-            <section class="cta" id="contact">
+            <section class="cta reveal" id="contact">
                 <div class="cta-inner">
-                    <h2>联系我们</h2>
+                    <h2>发起对话</h2>
                     <a href="mailto:hello@ylv.audio" class="cta-link">
                         <svg
                             class="i-arrow"
@@ -123,7 +222,7 @@
             </section>
         </main>
 
-        <footer class="site-footer" id="about">
+        <footer class="site-footer reveal" id="about">
             <a
                 href="#"
                 class="return-top"
@@ -141,7 +240,38 @@
                     <path d="M18 15L12 9L6 15" />
                 </svg>
             </a>
-            <div class="copyright">&copy; 2026 ylv audio technology</div>
+            <div class="copyright">&copy; 2026 ylv engineering</div>
         </footer>
+        <script>
+            const cursor = document.querySelector(".custom-cursor");
+            document.addEventListener("mousemove", (e) => {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
+            const hoverables = document.querySelectorAll(
+                "a, label, .business-item, .cta-link, .menu-btn, .menu-close",
+            );
+            hoverables.forEach((el) => {
+                el.addEventListener("mouseenter", () =>
+                    cursor.classList.add("hover"),
+                );
+                el.addEventListener("mouseleave", () =>
+                    cursor.classList.remove("hover"),
+                );
+            });
+            const reveals = document.querySelectorAll(".reveal");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("revealed");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.08 },
+            );
+            reveals.forEach((el) => observer.observe(el));
+        </script>
     </body>
 </html>
