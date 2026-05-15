@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ylv engineering</title>
+        <title>We play｜ylv engineering</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,40 +74,14 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-            .fv-line1,
-            .fv-line2 {
-                opacity: 0;
-                transform: translateY(30px);
+            .page-header {
+                border-bottom: none;
             }
-            .fv-line1 {
-                animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s
-                    forwards;
+            .about-body {
+                min-height: 20vh;
             }
-            .fv-line2 {
-                animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s
-                    forwards;
-            }
-            @keyframes fadeUp {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .business-item {
-                transition:
-                    background 0.2s ease,
-                    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            .business-item:hover {
-                transform: translateY(-3px);
-            }
-            .cta-link {
-                transition:
-                    opacity 0.15s ease,
-                    transform 0.25s ease;
-            }
-            .cta-link:hover {
-                transform: translateX(3px);
+            .cta {
+                border-top: none;
             }
         </style>
     </head>
@@ -116,12 +90,12 @@
         <input type="checkbox" class="menu-check" id="menu-opener" />
 
         <header class="site-header">
-            <a href="en.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="Logo/logo_c.drawio.png" alt="ylv" />
                 <span class="logo-text">｜ylv engineering</span>
             </a>
             <div class="header-actions">
-                <a href="index.html" class="lang-switch">中</a>
+                <a href="about.html" class="lang-switch">中</a>
                 <label for="menu-opener" class="menu-btn">MENU</label>
             </div>
         </header>
@@ -134,76 +108,20 @@
             <div class="menu-body">
                 <h2>Menu</h2>
                 <ul class="menu-list">
-                    <li><a href="#products">technology</a></li>
-                    <li><a href="#knowledge">knowledge</a></li>
-                    <li><a href="#software">software</a></li>
+                    <li><a href="en.html#products">technology</a></li>
+                    <li><a href="en.html#knowledge">knowledge</a></li>
+                    <li><a href="en.html#software">software</a></li>
                     <li><a href="about-en.html">about</a></li>
                 </ul>
             </div>
         </div>
 
         <main>
-            <section class="fv">
-                <h1 class="fv-copy">
-                    <span class="fv-line1">reveal</span>
-                    <span class="fv-line2"
-                        >the invisible architecture of sound.</span
-                    >
-                </h1>
+            <section class="page-header">
+                <h1>We play</h1>
             </section>
 
-            <section class="business reveal" id="products">
-                <div class="business-grid">
-                    <a href="#" class="business-item bg-core">
-                        <svg
-                            class="i-arrow"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                        <span>technology</span>
-                    </a>
-                    <a href="#" class="business-item bg-kb">
-                        <svg
-                            class="i-arrow"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                        <span>knowledge</span>
-                    </a>
-                    <a href="#" class="business-item bg-sw">
-                        <svg
-                            class="i-arrow"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                        <span>software</span>
-                    </a>
-                    <a href="about-en.html" class="business-item bg-about">
-                        <svg
-                            class="i-arrow"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                        <span>about</span>
-                    </a>
-                </div>
-            </section>
+            <section class="about-body reveal"></section>
 
             <section class="cta reveal" id="contact">
                 <div class="cta-inner">

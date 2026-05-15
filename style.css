@@ -286,6 +286,53 @@ ul {
     letter-spacing: -0.02em;
 }
 
+/* ─── hover background textures ─── */
+.business-item {
+    overflow: hidden;
+}
+
+.business-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.business-item.bg-core::before {
+    background-image: url("assets/bg-core.jpg");
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.business-item.bg-kb::before {
+    background-image: url("assets/bg-kb.jpg");
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.business-item.bg-sw::before {
+    background-image: url("assets/bg-sw.jpg");
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.business-item.bg-about::before {
+    background-image: url("assets/bg-texture.jpg");
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.business-item:hover::before {
+    opacity: 0.07;
+}
+
+.business-item .i-arrow,
+.business-item span {
+    position: relative;
+    z-index: 1;
+}
+
 /* ─── works / cases list ─── */
 .works {
     padding: calc(var(--space) * 1.5) var(--space);
@@ -374,6 +421,42 @@ ul {
 .cta-link .i-arrow {
     width: 18px;
     height: 18px;
+}
+
+/* ─── about page ─── */
+.page-header {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 200px var(--space) calc(var(--space) * 1.5);
+    border-bottom: 1px solid var(--line);
+}
+.page-header h1 {
+    font-size: clamp(56px, 10vw, 160px);
+    font-weight: 500;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+}
+
+.about-body {
+    padding: calc(var(--space) * 2.5) var(--space);
+}
+
+.about-lead {
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    max-width: 36ch;
+    margin-bottom: 0.6em;
+}
+
+.about-sub {
+    font-size: clamp(15px, 1.3vw, 20px);
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 42ch;
 }
 
 /* ─── footer ─── */
